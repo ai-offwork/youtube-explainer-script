@@ -12,12 +12,22 @@
 - 끝까지 보게 하는 장치, 문장·말투, **사실 확인 원칙**
 - AI 장면 그림·클립 프롬프트 규칙(선택)
 
-## 쓰는 법
+## 설치 (Claude Code)
+**방법 1. 명령 한 줄** — 모든 프로젝트에서 쓰려면:
 ```bash
-mkdir -p .claude/skills/youtube-explainer-script
-cp SKILL.md .claude/skills/youtube-explainer-script/
+mkdir -p ~/.claude/skills/youtube-explainer-script && curl -fsSL https://raw.githubusercontent.com/ai-offwork/youtube-explainer-script/main/SKILL.md -o ~/.claude/skills/youtube-explainer-script/SKILL.md
 ```
-Claude Code에서 "이 주제로 해설 영상 대본 써줘"라고 하면 스킬이 적용됩니다. 다른 에이전트라면 `SKILL.md`를 시스템 프롬프트로 넣으면 됩니다.
+특정 프로젝트에서만 쓰려면 `~/.claude/skills` 대신 그 프로젝트의 `.claude/skills`에 넣으세요. 설치 후 **새 세션**을 시작하면 인식됩니다.
+
+**방법 2. Claude에게 맡기기** — Claude Code에 이렇게 말하면 파일을 받아 설치해 줍니다(Claude가 파일 받기·쓰기를 허용받은 경우).
+> `https://raw.githubusercontent.com/ai-offwork/youtube-explainer-script/main/SKILL.md` 를 `~/.claude/skills/youtube-explainer-script/SKILL.md`로 설치해줘
+
+**방법 3. 직접 복사** — 이 저장소를 받아 `SKILL.md`를 `~/.claude/skills/youtube-explainer-script/`에 넣으면 됩니다.
+
+설치 확인: Claude Code에서 `/youtube-explainer-script`을 입력하거나 "이 주제로 해설 영상 대본 써줘"처럼 요청해 보세요. 다른 에이전트라면 `SKILL.md`를 시스템 프롬프트로 넣으면 됩니다. claude.ai 채팅에서는 설정의 스킬 업로드(zip)를 쓰는 방식이라 메뉴 이름이 바뀔 수 있으니 안내 문서를 확인하세요.
+
+## 쓰는 법
+"이 주제로 해설 영상 대본 써줘"라고 요청하면 스킬이 적용됩니다.
 
 ## 주의
 - 숫자·사건·이름은 직접 확인한 출처만 쓰도록 되어 있습니다. AI가 쓴 대본은 반드시 사실 확인을 거치세요.
